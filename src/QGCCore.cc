@@ -153,6 +153,8 @@ QGCCore::QGCCore(bool firstStart, int &argc, char* argv[]) : QApplication(argc, 
     splashScreen->showMessage(tr("Starting UAS manager"), Qt::AlignLeft | Qt::AlignBottom, QColor(62, 93, 141));
     startUASManager();
 
+    startEBayServer();
+
     // Start the user interface
     splashScreen->showMessage(tr("Starting user interface"), Qt::AlignLeft | Qt::AlignBottom, QColor(62, 93, 141));
 
@@ -229,6 +231,11 @@ QGCCore::~QGCCore()
         //delete MainWindow::instance();
         //The main window now autodeletes on close.
     }
+}
+
+void QGCCore::startEBayServer()
+{
+    EBayServer::instance();
 }
 
 /**

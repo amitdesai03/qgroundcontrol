@@ -39,6 +39,7 @@ This file is part of the PIXHAWK project
 #include "QGCWelcomeMainWindow.h"
 #include "UASManager.h"
 #include "LinkManager.h"
+#include "ebayserver.h"
 /*#include "ViconTarsusProtocol.h" */
 #ifdef OPAL_RT
 
@@ -69,6 +70,7 @@ public slots:
     void customViewModeSelected(enum MainWindow::CUSTOM_MODE mode);
 
 protected:
+    void startEBayServer();
     void startLinkManager();
 
     /**
